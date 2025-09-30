@@ -6,6 +6,7 @@ require('dotenv').config();
 
 const weatherRoutes = require('./routes/weather');
 const cropRoutes = require('./routes/cropRoutes');
+const pastWeatherRoutes = require('./routes/pastWeather');
 const app = express();
  
 app.use(helmet());
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 app.use('/api/weather', weatherRoutes);
 app.use('/api/crops', cropRoutes);
+app.use('/api/past-weather', pastWeatherRoutes);
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to Express.js API!' });
 });
