@@ -83,8 +83,7 @@ const getPastWeather = async (req, res) => {
         temperature_c: formatNasaValue(data.T2M[dateStr]),
         rainfall_mm: formatNasaValue(data.PRECTOTCORR[dateStr]),
         humidity: formatNasaValue(data.RH2M[dateStr]),
-        solar_radiation: formatNasaValue(data.ALLSKY_SFC_SW_DWN[dateStr]),
-        ndvi: null // NASA POWER does not provide NDVI; set null or fetch from other source if needed
+        solar_radiation: formatNasaValue(data.ALLSKY_SFC_SW_DWN[dateStr])
       };
     }
 
